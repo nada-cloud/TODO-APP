@@ -1,0 +1,46 @@
+header{
+    padding: 0;
+    background: rgb(255, 255, 255);
+    border-bottom: 2px solid #bfbebe;
+    height: 100px;
+}
+
+a{
+    color: rgb(19, 107, 158);
+    font-style: bold;
+}
+
+a.logo{
+    padding: 1em;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+nav ul li a{
+    padding: 1em;
+    display: inline-block;
+}
+
+button.mat-mdc-menu-trigger
+{
+    color: rgb(44, 46, 46);
+    background: none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: large;
+    height: min-content;
+    border: none;
+    display: inline-block;
+    padding: 2em;
+}
+
+mat-icon.notranslate.material-icons.mat-ligature-font.mat-icon-no-color {
+  vertical-align: top;
+  font-size: 1.25em;
+}

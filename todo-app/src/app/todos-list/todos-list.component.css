@@ -1,0 +1,31 @@
+.container{
+    margin: 3%;
+    width: 0 80%;
+    /* display: block; */
+    /* align-items: center; */
+}
+
+.todos{
+    padding: 0;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.card{
+    margin-bottom: 10px;
+    height: 145px;
+
+}
+
+.mat-mdc-card-actions.mdc-card__actions.mat-mdc-card-actions-align-end > button{
+    margin-left: 20px;
+    color: rgb(36, 80, 91);
+    background: none;
+    border: none;
+}
+
+.mat-mdc-card-actions.mdc-card__actions.mat-mdc-card-actions-align-end > button:hover{
+    color: #ff304c;
+}
