@@ -1,0 +1,31 @@
+<app-sub-header title={{data.title}}></app-sub-header>
+<div class="container">
+    <div>
+        <mat-list>
+            <mat-list-item>
+              <span matListItemTitle>Title</span>
+              <span matListItemLine>{{this.data.title}}</span>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+              <span matListItemTitle>State</span>
+              <span>{{castIdToState(this.data.state)}}</span>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+              <span matListItemTitle>Description</span>
+              <span>{{this.data.description}}</span>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+              <span matListItemTitle>Created on :</span>
+              <span>{{this.data.dateCreation}}</span>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+              <span matListItemTitle>Due to :</span>
+              <span>{{this.data.deadline}}</span>
+            </mat-list-item>
+          </mat-list>
+    </div>
+</div>

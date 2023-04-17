@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Guid } from 'guid-typescript';
-import { Todo } from 'src/models/todo.model';
-
-export interface DialogData {
-  id: number;
-  state: number;
-}
+import { ITodo, Todo } from 'src/models/todo.model';
+import { DetailComponent } from '../detail/detail.component';
 
 
 @Component({
@@ -14,8 +11,10 @@ export interface DialogData {
   styleUrls: ['./todos-list.component.css']
 })
 export class TodosListComponent {
+
+  constructor(public dialog: MatDialog) {}
   
-  todos: Todo[] = [
+  todos: ITodo[] = [
     new Todo(Guid.create(), 'Homework', false, 'Mathematics exercises', '11/04/2023', '21/04/2023'),
     new Todo(Guid.create(), 'Gym', true, 'Back exercises', '11/04/2023', '11/05/2023'),
   ]
@@ -30,9 +29,27 @@ export class TodosListComponent {
     return "";
   }
 
-public changeState(id: Guid){
-  let todo = this.todos.filter(x=>x.id === id)[0];
-  todo.state = !todo.state;
-}
+  public changeState(id: Guid){
+    let todo = this.todos.filter(x=>x.id === id)[0];
+    todo.state = !todo.state;
+  }
+
+  openDialog(id: Guid): void {
+    let todo = this.todos.filter(x=>x.id === id)[0];
+    console.log(todo);
+    const dialogRef = this.dialog.open(DetailComponent, {
+      data: {
+        title: todo.title,
+        state: todo.state,
+        description: todo.description,
+        dateCreation: todo.dateCreation,
+        deadline: todo.deadline,
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
 
 }

@@ -3,7 +3,7 @@
     <ul class="todos">
         <li *ngFor="let todo of todos">
             <div *ngIf="todo.state">
-                <mat-card class="card" >
+                <mat-card class="card" (click)="openDialog(this.todo.id)">
                     <mat-card-header>
                         <mat-card-title-group>
                             <mat-card-title class="strikethrough">
@@ -22,7 +22,7 @@
                         <mat-card-subtitle>State : {{castIdToState(this.todo.state)}}</mat-card-subtitle>
                     </mat-card-content>
                     <mat-card-actions align="end">
-                      <button mat-button>Details</button>
+                      <button mat-button (click)="openDialog(this.todo.id)">Details</button>
                       <button mat-button (click)="changeState(this.todo.id)">Mark as done</button>
                       <input class="toggle" type="checkbox" [(ngModel)]="this.todo.state">
                     </mat-card-actions>
@@ -31,7 +31,7 @@
         </li>
         <li *ngFor="let todo of todos">
             <div *ngIf="!todo.state">
-                <mat-card class="card" >
+                <mat-card class="card" (click)="openDialog(this.todo.id)">
                     <mat-card-header>
                         <mat-card-title-group>
                             <mat-card-title>
@@ -50,7 +50,7 @@
                         <mat-card-subtitle>State : {{castIdToState(this.todo.state)}}</mat-card-subtitle>
                     </mat-card-content>
                     <mat-card-actions align="end">
-                      <button mat-button>Details</button>
+                      <button mat-button (click)="openDialog(this.todo.id)">Details</button>
                       <button mat-button (click)="changeState(this.todo.id)">Mark as done</button>
                       <input class="toggle" type="checkbox" [(ngModel)]="this.todo.state">
                     </mat-card-actions>

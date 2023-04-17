@@ -1,5 +1,15 @@
 import { Guid } from "guid-typescript";
 
+
+export interface ITodo {
+    id: Guid,
+    title: string,
+    state: boolean,
+    description: string,
+    dateCreation: string,
+    deadline: string,
+  }
+  
 export class Todo{
     constructor(
         public id: Guid,
