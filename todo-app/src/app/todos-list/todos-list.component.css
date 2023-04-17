@@ -29,3 +29,8 @@ ul{
 .mat-mdc-card-actions.mdc-card__actions.mat-mdc-card-actions-align-end > button:hover{
     color: #ff304c;
 }
+
+.strikethrough {
+    text-decoration: line-through;
+  }
+  

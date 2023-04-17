@@ -11,7 +11,8 @@ import {MatCardModule} from '@angular/material/card';
 import { SubHeaderComponent } from '../sub-header/sub-header.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatChipsModule} from '@angular/material/chips';
-import {MatBadgeModule} from '@angular/material/badge';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatCardModule,
     MatButtonModule,
     MatChipsModule,
-    MatBadgeModule
+    MatCheckboxModule,
+    FormsModule
   ],
   exports: [
     TodosListComponent
