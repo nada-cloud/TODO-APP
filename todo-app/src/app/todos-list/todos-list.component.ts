@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Guid } from 'guid-typescript';
 import { ITodo, Todo } from 'src/models/todo.model';
 import { DetailComponent } from '../detail/detail.component';
+import { AddComponent } from '../add/add.component';
 
 
 @Component({
@@ -36,7 +37,6 @@ export class TodosListComponent {
 
   openDialog(id: Guid): void {
     let todo = this.todos.filter(x=>x.id === id)[0];
-    console.log(todo);
     const dialogRef = this.dialog.open(DetailComponent, {
       data: {
         title: todo.title,
@@ -44,6 +44,17 @@ export class TodosListComponent {
         description: todo.description,
         dateCreation: todo.dateCreation,
         deadline: todo.deadline,
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
+  addTodo(): void {
+    const dialogRef = this.dialog.open(AddComponent, {
+      data: {
       }
     });
 

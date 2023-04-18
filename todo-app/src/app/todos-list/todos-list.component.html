@@ -1,5 +1,8 @@
 <app-sub-header title="Current TODOS :"></app-sub-header>
 <div class="container">
+    <button mat-icon-button color="black" aria-label="add" (click)="addTodo()">
+        <mat-icon>add</mat-icon>
+    </button>
     <ul class="todos">
         <li *ngFor="let todo of todos">
             <div *ngIf="todo.state">
@@ -10,10 +13,10 @@
                                 {{this.todo.title}}
                             </mat-card-title>
                         </mat-card-title-group>
-                        <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                        <button mat-icon-button color="primary" aria-label="create">
                             <mat-icon>create</mat-icon>
                         </button>
-                        <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+                        <button mat-icon-button color="warn" aria-label="delete">
                             <mat-icon>delete</mat-icon>
                         </button>
                     </mat-card-header>
@@ -38,10 +41,10 @@
                                 {{this.todo.title}}
                             </mat-card-title>
                         </mat-card-title-group>
-                        <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                        <button mat-icon-button color="primary" aria-label="create">
                             <mat-icon>create</mat-icon>
                         </button>
-                        <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+                        <button mat-icon-button color="warn" aria-label="delete">
                             <mat-icon>delete</mat-icon>
                         </button>
                     </mat-card-header>
